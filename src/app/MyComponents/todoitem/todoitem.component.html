@@ -1,0 +1,22 @@
+
+<div class="mb-4">
+    <div [ngClass]="{'strike' : !todo.active}">
+        <h5>
+            {{ todo.name }}
+        </h5>
+        <p>
+            {{ todo.description }}
+        </p>
+    </div>
+    <!-- <p>
+        {{todo.active}}
+    </p> -->
+    <div class="form-check my-2" >
+        <input (click)="markAsDone()" class="form-check-input" type="checkbox" 
+            id="flexCheckDefault-{{todo.id}}" [checked]="!todo.active" >
+        <label class="form-check-label" for="flexCheckDefault-{{todo.id}}">
+          Mark As Done
+        </label>
+    </div>
+    <button class="btn btn-danger btn-sm" (click)="onDeleteClicked()">Delete</button>
+</div>

@@ -1,0 +1,20 @@
+<div class="container">
+    <h1 class="mb-5">
+        TODOs
+    </h1>
+    <app-addtodo (addTodoEmitter)="addTodo($event)"></app-addtodo>
+    <div class="mt-3">
+
+        <div *ngIf="todos.length > 0 else elseBlock">
+            <h3 class="mb-3">Your Todos</h3>
+            <div *ngFor="let todo of todos">
+                <app-todoitem [todo]="todo" (todoDeleter)="deleteTodo($event)"
+                    (todoDone)="markAsDone($event)"></app-todoitem>
+            </div>
+        </div>
+        <ng-template #elseBlock>
+            <h3>You don't have any Todos</h3>
+        </ng-template>
+    </div>
+
+</div>

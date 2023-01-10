@@ -1,0 +1,13 @@
+<form class="row g-4 justify-content-around mb-4" (ngSubmit)="onSubmit()">
+    <div class="col-4">
+        <input type="text" class="form-control" [(ngModel)]="title" 
+            id="todoinput" placeholder="Add Todo Item" name="todoinput" />
+    </div>
+    <div class="col-4">
+        <input type="text" class="form-control" [(ngModel)]="description" 
+            id="tododescinput" placeholder="Add Todo Description" name="tododescinput" />
+    </div>
+    <div class="col-4">
+        <button type="submit" class="btn btn-primary mb-3" [disabled]='title === "" || description === ""'>Add Todo</button>
+    </div>
+</form>
